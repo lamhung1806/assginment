@@ -25,5 +25,6 @@ export const getAllUser = (data) => async (dispatch) => {
   const dataList = response.data.results;
   console.log(dataList);
   dataList.sort((a, b) => (a.name.first > b.name.first ? 1 : -1));
+  dataList.sort((a, b) => (a.login.username > b.login.username ? 1 : -1));
   dispatch(getAllUserAction(dataList));
 };
