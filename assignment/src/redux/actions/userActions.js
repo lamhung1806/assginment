@@ -23,12 +23,17 @@ export const getAllUser = (data) => async (dispatch) => {
     `https://randomuser.me/api/?page=${data}&results=10`
   );
   const dataList = response.data.results;
-  console.log(dataList);
-  dataList.sort((a, b) =>
-    a.name.title.toLowerCase() > b.name.title.toLowerCase() ? 1 : -1
-  );
-  dataList.sort((a, b) =>
-    a.login.username.toLowerCase() > b.login.username.toLowerCase() ? 1 : -1
-  );
+  dataList.sort((a, b) => {
+    if (a.name.title.toLowerCase() < b.name.title.toLowerCase()) return -1;
+    if (a.name.title.toLowerCase() < b.name.title.toLowerCase()) return 1;
+    return 0;
+  });
+  dataList.sort((a, b) => {
+    if (a.login.username.toLowerCase() < b.login.username.toLowerCase())
+      return -1;
+    if (a.login.username.toLowerCase() < b.login.username.toLowerCase())
+      return 1;
+    return 0;
+  });
   dispatch(getAllUserAction(dataList));
 };
