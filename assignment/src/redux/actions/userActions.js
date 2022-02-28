@@ -18,9 +18,9 @@ export const PreviosPageUserAction = (data) => {
   };
 };
 
-export const getAllUser = (data) => async (dispatch) => {
+export const getAllUser = (currentPage) => async (dispatch) => {
   const response = await axios.get(
-    `https://randomuser.me/api/?page=${data}&results=10`
+    `https://randomuser.me/api/?page=${currentPage}&results=10`
   );
   const dataList = response.data.results;
   dataList.sort((a, b) => {

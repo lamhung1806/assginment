@@ -10,7 +10,7 @@ function User() {
   const currentPage = useSelector(state => state.user.currentPage)
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getAllUser())
+    dispatch(getAllUser(currentPage))
   },[currentPage])
   const handleClickNext =()=>{
     if(currentPage < 10){
