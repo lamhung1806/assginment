@@ -14,12 +14,12 @@ function User() {
   },[currentPage])
   const handleClickNext =()=>{
     if(currentPage < 10){
-      dispatch(nextPageUserAction(currentPage))
+      dispatch(nextPageUserAction())
     }
   }
   const handleClickPrev =()=>{
   if(currentPage > 1) {
-    dispatch(PreviosPageUserAction(currentPage))
+    dispatch(PreviosPageUserAction())
   }
   }
     return (
