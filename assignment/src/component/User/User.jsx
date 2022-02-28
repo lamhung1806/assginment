@@ -26,9 +26,9 @@ function User() {
         <> 
         <div className="text-center">
 
-    <FontAwesomeIcon onClick={handleClickPrev} icon={faAngleLeft}/>
-    <span className="m-4" >{currentPage}</span>
-    < FontAwesomeIcon onClick={handleClickNext} icon={faAngleRight}/>
+          <FontAwesomeIcon onClick={handleClickPrev} icon={faAngleLeft}/>
+          <span className="m-4" >{currentPage}</span>
+          < FontAwesomeIcon onClick={handleClickNext} icon={faAngleRight}/>
         </div>
            <table className="table">
         <thead>
